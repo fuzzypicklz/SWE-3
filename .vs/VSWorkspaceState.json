@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\database",
+    "\\database\\migrations",
+    "\\models",
+    "\\routes",
+    "\\views"
+  ],
+  "SelectedNode": "\\knexfile.js",
+  "PreviewInSolutionExplorer": false
+}

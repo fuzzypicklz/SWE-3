@@ -6,21 +6,13 @@ const mysql = require('mysql');
 
 
 const localSQLConnection = {
-    host: "pvnet-testing.cjdmtmc8kuwg.us.west.rds.amazonaws.com",
+    host: "pvnet-testing.cjdmtmc8kuwg.us-west-1.rds.amazonaws.com",
     port: "3306",
     user: "pvnetuser",
     password: "CDy21xM8c9NA",
     database: "SWE3"
 };
-
-localSQLConnection.knex.raw("SELECT 1").then(() => {
-    console.log("connected :D");
-})
-    .catch((e) => {
-        console.log("no connection :C");
-        console.error(e);
-    });
-
+    
 // Production database connection
 const SQLConnection = localSQLConnection;
 

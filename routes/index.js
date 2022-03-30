@@ -4,26 +4,30 @@ const userModel = require('../models/userModel');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Hello sire' });
+    res.render('index', { title: 'Hello sire', user: "no account :<"});
 });
 
 router.get('/signin', function (req, res, next) {
-    res.render('signin', { title: 'TeLl Me HoW yOu\'Re FeElInG' });
+    res.render('signin', { title: 'TeLl Me HoW yOu\'Re FeElInG'});
 });
 
 router.get('/signup', function (req, res, next) {
-    res.render('signup', { title: 'Imagine not having an account' });
+    res.render('signup', { title: 'Imagine not having an account'});
 });
 
 router.post('/authenticateUser', async function (req, res, next) {
     const yn = await userModel.findUser(req.body.email, req.body.password);
-    if (yn != null) {
-        res.end("gouda youda been done good");
+    if (yn == true) {
+        res.render('index', { title: "Hello your magnificence", user: req.body.email });
+    }
+    else {
+        res.render('index', { title: "A BOZO APPEARS", user: "no account BECAUSE YOU DIDN'T PUT IN THE RIGHT CREDENTIALS" });
     }
 });
 
 router.post('/registerUser', async function (req, res, next) {
     await userModel.insertUser(req.body.email, req.body.password);
+    res.render('index', { title: "Hello your excellency", user: "nothing yet, go sign in you lazy butt" });
 });
 
 /*

@@ -15,7 +15,19 @@ async function findUser(username, password) {
         .where("email", username)
         .where("user_password", password)
         .select();
-    return result;
+    console.log(username);
+    console.log(password);
+    console.log("credentials | result");
+    console.log(result);
+    if (result[0]) {
+        return true;
+    }
+    else {
+        return false;
+    }
+    
 }
+
+
 
 module.exports = { findUser, insertUser };

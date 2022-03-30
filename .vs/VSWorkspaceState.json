@@ -7,6 +7,6 @@
     "\\routes",
     "\\views"
   ],
-  "SelectedNode": "\\knexfile.js",
+  "SelectedNode": "\\models\\userModel.js",
   "PreviewInSolutionExplorer": false
 }
